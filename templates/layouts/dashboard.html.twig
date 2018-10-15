@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}Symfony Demo application{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('plugins/switchery/switchery.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/bootstrap.min.css' ) }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/icons.css' ) }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/style.css' ) }}" rel="stylesheet" type="text/css">
+        <script src="{{ asset('js/modernizr.min.js' ) }}"></script>
+    {% endblock %}
+</head>
+<body class="fixed-left">
+<div id="wrapper">
+    {% block topbar %}
+        {{ include('partials/topbar.html.twig') }}
+    {% endblock %}
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <!--- Divider -->
+            <div id="sidebar-menu">
+                <ul>
+                    {% block left_sidebar %}
+                        {{ include('partials/left_sidebar.html.twig') }}
+                    {% endblock %}
+                </ul>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid">
+                {% block breadcrumb %}
+                    {{ include('partials/breadcrumb.html.twig') }}
+                {% endblock %}
+
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {% block footer %}
+            {{ include('partials/footer.html.twig') }}
+        {% endblock %}
+    </div>
+</div>
+{% block javascripts %}
+    <!-- Plugins  -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script><!-- Popper for Bootstrap -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/detect.js') }}"></script>
+    <script src="{{ asset('js/fastclick.js') }}"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+    <script src="{{ asset('js/waves.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+    <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
+    <script src="{{ asset('plugins/switchery/switchery.min.js') }}"></script>
+
+    <!-- Custom main Js -->
+    <script src="{{ asset('js/jquery.core.js') }}"></script>
+    <script src="{{ asset('js/jquery.app.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>
