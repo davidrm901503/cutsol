@@ -1,6 +1,6 @@
 {% extends 'layouts/dashboard.html.twig' %}
 
-{% block title %}Acero sasd {{ controller_name }}!{% endblock %}
+{% block title %}Acero {% endblock %}
  {% block left_sidebar %}
      {{ include('partials/left_sidebar_acero.html.twig') }}
  {% endblock %}
@@ -13,9 +13,9 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Espesor</th>
-                        <th>Velocidad Corte</th>
-                        <th>Tiempo Pinchazo</th>
+                        <th>Espesor <br>(mm)</th>
+                        <th>Tiempo <br>(min)</th>
+                        <th>Precio <br>($)</th>
                     </tr>
                     </thead>
                     <tbody>

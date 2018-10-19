@@ -1,0 +1,119 @@
+{% extends 'layouts/dashboard.html.twig' %}
+
+{% block title %}Acero {% endblock %}
+ {% block left_sidebar %}
+     {{ include('partials/left_sidebar_acero.html.twig') }}
+ {% endblock %}
+{% block body %}
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <div class="form-group row">
+                    <label style="flex: 0 0 11.666667%;max-width: 16.666667%;" class="col-form-label">Precio por Kg</label>
+                    <div class="col-md-1">
+                        <input class="form-control" name="number" type="number" value="20">
+                    </div>
+
+                    <label class="col-1 col-form-label">Densidad</label>
+                    <div class="col-md-1">
+                        <input class="form-control" name="number" type="number" value="7900">
+                    </div>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th rowspan="2">Espesor <br>(mm)</th>
+                        <th colspan="2">Formato</th>
+                        <th rowspan="2">Volumen<br>(m<sup>3</sup>)</th>
+                        <th rowspan="2">Densidad</th>
+                        <th rowspan="2">Peso <br>(kg)</th>
+                        <th rowspan="2">Precio Estimado <br>($)</th>
+                    </tr>
+                    <tr>
+                        <th>Largo</th>
+                        <th>Ancho</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0,5</td>
+                        <td>5000</td>
+                        <td>4000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

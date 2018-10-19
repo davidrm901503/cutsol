@@ -1,0 +1,42 @@
+{% extends 'layouts/dashboard.html.twig' %}
+
+{% block title %}Acero {% endblock %}
+ {% block left_sidebar %}
+     {{ include('partials/left_sidebar_acero.html.twig') }}
+ {% endblock %}
+{% block body %}
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Horas <br>(hs)</th>
+                        <th>Minutos <br>(min)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Horas Diarias</td>
+                        <td>6</td>
+                        <td>360</td>
+                    </tr>
+                    <tr>
+                        <td>Días mensuales</td>
+                        <td>20</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Horas Mensuales</td>
+                        <td>26</td>
+                        <td>380</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

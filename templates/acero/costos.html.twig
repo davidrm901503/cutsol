@@ -1,0 +1,79 @@
+{% extends 'layouts/dashboard.html.twig' %}
+
+{% block title %}Acero {% endblock %}
+ {% block left_sidebar %}
+     {{ include('partials/left_sidebar_acero.html.twig') }}
+ {% endblock %}
+{% block body %}
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Valor <br>($)</th>
+                        <th>Cantidad</th>
+                        <th>Repago <br>(meses)</th>
+                        <th>Valor por mes <br>($|mes)</th>
+                        <th>Valor por hora <br>($|hora)</th>
+                        <th>Valor por minuto <br>($|min)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Máquina</td>
+                        <td>500,000</td>
+                        <td>1</td>
+                        <td>12</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Consumibles</td>
+                        <td>12,000</td>
+                        <td>1</td>
+                        <td>12</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>4,000</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr> <tr>
+                        <td style="text-align: left" colspan="4">Total</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                    </div>
+                    <label  class="col-1 col-form-label">Markup</label>
+                    <div class="col-md-1">
+                        <input class="form-control" name="text" type="text" value="20%">
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="widget-simple text-center card-box">
+                            <h5 class=" mt-0">Valor Hora ($)</h5>
+                            <hr style="position: relative;right: 20px;width: 152px;" >
+                            <p class="text-muted mb-0">15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
