@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}Symfony Demo application{% endblock %}</title>
     {% block stylesheets %}
-        <link href="{{ asset('plugins/switchery/switchery.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('plugins/custombox/custombox.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('plugins/jquery-datatables-editable/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('plugins/switchery/switchery.min.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('css/bootstrap.min.css' ) }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/icons.css' ) }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/style.css' ) }}" rel="stylesheet" type="text/css">
@@ -65,10 +67,18 @@
     <script src="{{ asset('js/jquery.scrollTo.min.js') }}"></script>
     <script src="{{ asset('plugins/switchery/switchery.min.js') }}"></script>
 
+
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/datatables.editable.init.js') }}"></script>
+
+    <script src="{{ asset('plugins/custombox/custombox.min.js') }}"></script>
+    <script src="{{ asset('plugins/custombox/legacy.min.js') }}"></script>
     <!-- Custom main Js -->
     <script src="{{ asset('js/jquery.core.js') }}"></script>
     <script src="{{ asset('js/jquery.app.js') }}"></script>
 {% endblock %}
+{% block otherscripts %}{% endblock %}
 
 </body>
 </html>

@@ -1,0 +1,49 @@
+<table class="table table-hover  table-bordered" id="datatable-editable">
+    <thead>
+    <tr>
+        <th rowspan="2"></th>
+        <th rowspan="2">Valor <br>($)</th>
+        <th rowspan="2">Cantidad</th>
+        <th colspan="3">Cantidad</th>
+        <th rowspan="2">Total Mensual <br>($)</th>
+    </tr>
+    <tr>
+        <th>Horas</th>
+        <th>Días</th>
+        <th style="border-right: 1px solid #e9ecef !important;">Meses</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for marketing in marketings %}
+        {% if marketing.type != "total" %}
+            <tr>
+                {#<td>{{ marketing.id }}</td>#}
+                <td><a class="edit-button" href="#" data-id="{{ marketing.id }}"> {{ marketing.type | capitalize }} </a></td>
+                {#<td ><a class="edit-button" href="#" data-id="{{ marketing.id }}"  data-toggle="modal" data-target="#con-close-modal" class="on-default edit-row" > {{ marketing.type | capitalize }} </a> </td>#}
+                <td>{{ marketing.valor }}</td>
+                <td>{{ marketing.cantidad }}</td>
+                <td>{{ marketing.horas }}</td>
+                <td>{{ marketing.dias }}</td>
+                <td>{{ marketing.meses }}</td>
+                <td>{{ marketing.total }}</td>
+
+            </tr>
+
+        {% else %}
+            <tr>
+                {#<td>{{ marketing.id }}</td>#}
+                <td>{{ marketing.type | capitalize }}  </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="actions">
+
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>

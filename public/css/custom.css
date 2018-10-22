@@ -1,4 +1,7 @@
-.table > thead > tr > th,.table > tbody > tr > td {
+.table > thead > tr > th,.table > tbody > tr > td:not(:first-child) {
     vertical-align: middle;
     text-align: center;
+}
+table.dataTable{
+    border-collapse:collapse !important;
 }
