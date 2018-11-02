@@ -23,6 +23,8 @@ $  composer require friendsofsymfony/user-bundle "~2.0"
 $  composer install
 $  php bin/console doctrine:database:create
 $  php bin/console doctrine:migrations:migrate
+$  composer require orm-fixtures --dev
+$  php bin/console make:fixtures
 ```
 
 Levantar App
@@ -31,6 +33,7 @@ Levantar App
 Ejecute el comando y abra la siguiente URL en su navegador <http://localhost:8000>:
 
 ```bash
+$ php bin/console doctrine:fixtures:load
 $ php bin/console server:run
 ```
 
