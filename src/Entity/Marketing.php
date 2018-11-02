@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Marketing
 {
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -21,6 +23,11 @@ class Marketing
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -52,6 +59,38 @@ class Marketing
      */
     private $total;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updated;
+
+    /**
+     * @param $dias
+     * @return Marketing
+     */
+    public function setCreated($date): self
+    {
+        $this->created = $date;
+
+        return $this;
+    }
+
+    /**
+     * @param $date
+     * @return Marketing
+     */
+    public function setUpdated($date): self
+    {
+        $this->updated = $date;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -62,6 +101,15 @@ class Marketing
         return $this->type;
     }
 
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $type
+     * @return Marketing
+     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -69,12 +117,12 @@ class Marketing
         return $this;
     }
 
-    public function getValor(): ?int
+    public function getValor(): ?float
     {
         return $this->valor;
     }
 
-    public function setValor(?int $valor): self
+    public function setValor(?float $valor): self
     {
         $this->valor = $valor;
 
@@ -145,15 +193,22 @@ class Marketing
     /**
      * @ORM\PrePersist
      */
-    public function doStuffOnPrePersist()
+    public function PrePersistEvent()
     {
-        $this->type = strip_tags(strtolower($this->type));
+        $this->type = strip_tags($this->type);
+        $this->slug = str_replace(" ", "-", strip_tags(mb_strtolower(trim($this->type))));
+        $this->updateItem();
     }
 
     /**
      * @ORM\PreUpdate
      */
-    public function doStuffOnPreUpdate()
+    public function PostUpdateEvent()
+    {
+        $this->updateItem();
+    }
+
+    private function updateItem()
     {
         $this->total = $this->valor * $this->horas * $this->dias * $this->meses;
     }

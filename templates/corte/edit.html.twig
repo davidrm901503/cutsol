@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Corte{% endblock %}
+
+{% block body %}
+    <h1>Edit Corte</h1>
+
+    {{ include('corte/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('corte_index') }}">back to list</a>
+
+    {{ include('corte/_delete_form.html.twig') }}
+{% endblock %}

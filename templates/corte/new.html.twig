@@ -1,0 +1,14 @@
+{% extends 'layouts/dashboard.html.twig' %}
+
+ {% block title %}Corte{% endblock %}
+ {% block left_sidebar %}
+     {{ include('partials/left_sidebar_acero.html.twig') }}
+ {% endblock %}
+
+{% block body %}
+    <h1>Nuevo Corte</h1>
+
+    {{ include('corte/_form.html.twig') }}
+
+    <a href="{{ path('corte_index') }}">Regresar a la lista</a>
+{% endblock %}

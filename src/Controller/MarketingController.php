@@ -21,11 +21,19 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class MarketingController extends AbstractController
 {
     /**
-     * @Route("/", name="marketing_index", methods="GET")
+     * @Route("", name="marketing_index", methods="GET")
      */
     public function index(MarketingRepository $marketingRepository): Response
     {
-        return $this->render('marketing/index.html.twig', ['marketings' => $marketingRepository->findAll()]);
+        $lista = $marketingRepository->findAll();
+        $suma = 0;
+        foreach ($lista as $item) {
+            if ($item->getSlug() != "total"){
+                $suma+= $item->getTotal();
+            }
+        }
+
+        return $this->render('marketing/index.html.twig', ['marketings' => $marketingRepository->findAll(),'total' => $suma]);
     }
 
     /**
@@ -104,13 +112,14 @@ class MarketingController extends AbstractController
                     'No marketing found for id ' . $id
                 );
             }
-            $marketing->setValor($request->request->get('valor'));
-            $marketing->setCantidad($request->request->get('cantidad'));
-            $marketing->setHoras($request->request->get('horas'));
-            $marketing->setDias($request->request->get('dias'));
-            $marketing->setMeses($request->request->get('meses'));
+            $marketing->setValor((float)$request->request->get('valor'));
+            $marketing->setCantidad((int)($request->request->get('cantidad')));
+            $marketing->setHoras((int)$request->request->get('horas'));
+            $marketing->setDias((int)$request->request->get('dias'));
+            $marketing->setMeses((int)$request->request->get('meses'));
             $entityManager->flush();
-            $response = new RedirectResponse('http://example.com/');
+
+
             return new JsonResponse([], Response::HTTP_OK);
         }
         return new JsonResponse([
